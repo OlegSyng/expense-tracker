@@ -1,13 +1,13 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { Layout } from "../../components/Layout";
 import { HomePage } from "../../pages/home/HomePage";
 import { ErrorPage } from "../../pages/error/ErrorPage";
 import { BalanceCard } from "../../components/BalanceCard";
 import { Calendar } from "../../components/Calendar";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
-    path: "/expense-tracker/",
+    path: "/",
     element: (
       <Layout>
         <HomePage />
@@ -15,18 +15,14 @@ export const router = createBrowserRouter([
     ),
     children: [
         { 
-            path: "/expense-tracker/",
+            path: "/",
             element: <BalanceCard />,
         },
         {
-            path: "/expense-tracker/expenses",
+            path: "/expenses",
             element: <Calendar />,
         },
     ],
     errorElement: <ErrorPage />,
   },
 ]);
-
-router.routes.forEach((route) => {
-    console.log(route.path);
-})

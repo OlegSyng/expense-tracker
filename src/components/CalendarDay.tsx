@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { CircleIcon } from "../shared/icons/CircleIcon";
 import { CalendarDayType } from "./Calendar";
@@ -22,27 +22,31 @@ const formatDate = (date: Date, dayOnly: boolean) => {
 
 export const CalendarDay: FC<ICalendarDayProps> = ({ data, isActive }) => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", color: "#615C5C" }}>
-      <Typography align="center" fontWeight={isActive ? 700 : 400} sx={{ mb: "10px" }}>
+    <Box sx={{ color: "#615C5C" }}>
+      <Typography
+        align="center"
+        fontWeight={isActive ? 700 : 400}
+        sx={{ mb: "10px" }}
+      >
         {formatDate(data.date, false).substring(0, 1)}
       </Typography>
-      <Stack
-        direction="column"
+      <Box
         sx={{
-          minHeight: 36,
-          alignItems: "center",
           px: "10px",
           pt: "12px",
-          gap: '11px',
           pb: "9px",
           borderRadius: "8px",
-          color: isActive ? "#fff" : 'inherit',
+          color: isActive ? "#fff" : "inherit",
           backgroundColor: isActive ? "var(--button-accent)" : "transparent",
         }}
       >
-        <Typography fontWeight={isActive ? 800 : 400}>{formatDate(data.date, true)}</Typography>
-        {data.hasExpense && <CircleIcon fill={isActive ? "#fff" : "#A3A3A3"} />}
-      </Stack>
+        <Typography fontWeight={isActive ? 800 : 400} sx={{ mb: "11px" }}>
+          {formatDate(data.date, true)}
+        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center", height: 6 }}>
+          {data.hasExpense && <CircleIcon fill={isActive ? "#fff" : "#A3A3A3"} />}
+        </Box>
+      </Box>
     </Box>
   );
 };
