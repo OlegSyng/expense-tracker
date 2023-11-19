@@ -7,7 +7,7 @@ import { Calendar } from "../../components/Calendar";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/expense-tracker/",
     element: (
       <Layout>
         <HomePage />
@@ -15,11 +15,11 @@ export const router = createBrowserRouter([
     ),
     children: [
         { 
-            path: "/",
+            path: "/expense-tracker/",
             element: <BalanceCard />,
         },
         {
-            path: "/expenses",
+            path: "/expense-tracker/expenses",
             element: <Calendar />,
         },
     ],
