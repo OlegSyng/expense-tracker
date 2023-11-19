@@ -17,13 +17,13 @@ export const AddIcon: FC = () => {
               id="Vector 1"
               d="M24.3914 16V34"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <path
               id="Vector 2"
               d="M15.3914 25L33.3914 25"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </g>
         </g>

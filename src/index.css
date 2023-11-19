@@ -19,8 +19,8 @@
   --button-accent: #FF643B;
   --button-default: #A3A3A3;
 
-
   --text-body: #A3A3A3;
+  --text-grey: #FAFAFA;
 }
 
 body {
@@ -40,6 +40,21 @@ div.mobile-wrapper {
   border-radius: 30px;
   background-color: #fff;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+div#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.quick-nav-button.active,
+.quick-nav-button.active:hover {
+  color: #fff;
+  background-color: #2F3046;
 }
 
 @media (prefers-color-scheme: light) {

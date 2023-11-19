@@ -44,7 +44,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
         </IconButton>
       </Box>
       {/* // Main content wrapper element */}
-      <Box component='main' sx={{flexGrow: 1}}>{children}</Box>
+      <Box component='main' sx={{flexGrow: 1, px: '27px', overflow: 'auto'}}>{children}</Box>
       <Box
         component="footer"
         sx={{
